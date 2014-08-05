@@ -38,9 +38,11 @@
         self.map = [CCTMXTiledMap tiledMapWithTMXFile:[NSString stringWithFormat:@"map%d.tmx",leve]];
 
  
-
-        float big = _winSize.height/_map.contentSize.height; 
-        _map.scale = big;
+        //
+        float scaleX = _winSize.width/_map.contentSize.width;
+        float scaleY = _winSize.height/_map.contentSize.height;
+        _map.scaleX = scaleX;
+        _map.scaleY = scaleY;
 
 
         _bg1Layer = [_map layerNamed:@"bg1"];
